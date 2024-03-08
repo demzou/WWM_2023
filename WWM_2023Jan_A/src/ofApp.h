@@ -6,7 +6,8 @@
 
 // listening on
 #define PORT 6001
-
+#define WINDOW_WIDTH 1280
+#define WINDOW_HEIGHT 720
 // max number of strings to display
 #define NUM_MSG_STRINGS 20
 
@@ -32,5 +33,6 @@ public:
     int sunLocX, sunLocY, totalRays, maxTotalRays;
     int radAmt;
     bool invite;
+    ofFbo frameBuffer;
 
 };
