@@ -4,10 +4,10 @@
 			"path": "."
 		},
 		{
-			"path": "${workspaceFolder}/../../../open-source/of_v0.12.0_linux64gcc6_release/libs/openFrameworks"
+			"path": "${workspaceFolder}/../../../../libs/openFrameworks"
 		},
 		{
-			"path": "${workspaceFolder}/../../../open-source/of_v0.12.0_linux64gcc6_release/addons"
+			"path": "${workspaceFolder}/../../../../addons"
 		}
 	],
 	"settings": {}
