@@ -2,8 +2,8 @@
 
 #include "ofMain.h"
 #include "ofxOsc.h"
-#include "ofxNDISender.h"
-#include "ofxNDISendStream.h"
+// #include "ofxNDISender.h"
+// #include "ofxNDISendStream.h"
 
 // listening on
 #define PORT 6001
@@ -35,8 +35,8 @@ public:
     int radAmt;
     bool invite;
     ofFbo frameBuffer;
-private:
-	ofxNDISender sender;
-	ofxNDISendVideo video;
-	ofVideoGrabber camera;
+// private:
+// 	ofxNDISender sender;
+// 	ofxNDISendVideo video;
+// 	ofVideoGrabber camera;
 };
