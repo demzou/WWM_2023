@@ -13,7 +13,7 @@
 // max number of strings to display
 #define NUM_MSG_STRINGS 20
 #define NDI_IDENTIFIER_PREFIX "WWM-Projector-"
-#define NUMBER_OF_PROJECTORS 3
+#define NUMBER_OF_PROJECTORS 5
 
 class ofApp : public ofBaseApp {
 

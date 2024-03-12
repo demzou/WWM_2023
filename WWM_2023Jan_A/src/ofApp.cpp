@@ -33,6 +33,18 @@ void ofApp::setup() {
  }
 
 //--------------------------------------------------------------
+/**
+* Update the state of the application
+* based on incoming OSC messages
+* 
+* Messages are assumed to be of the RESTful format:
+* /projectors/<projectorIndex>/<message>
+* 
+* With indexes starting at 0
+* / 0        / 1             / 2
+* 
+* 
+***/
 void ofApp::update() {
 
 
@@ -45,16 +57,33 @@ void ofApp::update() {
         ofxOscMessage m;
         receiver.getNextMessage(m);
 
-        if (m.getAddress() == "/dist") {
-            projectors[1].dist = m.getArgAsFloat(0);
-        }
-        else if (m.getAddress() == "/invite") {
-            projectors[1].radAmt = 0;
-            projectors[1].invite = true;
-        }
+
+        // parse out the path elements
+        vector<string> addressParts = ofSplitString(m.getAddress(), "/");
+        // drop the empty first element
+        addressParts.erase(addressParts.begin());
+
+        int projectorIndex = ofToInt(addressParts[1]);
+        string message = addressParts[2];
+
+        // check for valid projector index
+        if (projectorIndex >= NUMBER_OF_PROJECTORS) {
+			messageBuffer.push_front(m.getAddress() + ": UNRECOGNIZED PROJECTOR INDEX");
+			continue;
+		}
+        
+        // execute the message
+        if (message == "dist") {
+			projectors[projectorIndex].dist = m.getArgAsFloat(0);
+		}
+        else if (message == "invite") {
+			projectors[projectorIndex].radAmt = 0;
+			projectors[projectorIndex].invite = true;
+		}
         else {
-            messageBuffer.push_front(m.getAddress() + ": UNRECOGNIZED MESSAGE");
-        }
+			messageBuffer.push_front(m.getAddress() + ": UNRECOGNIZED MESSAGE");
+		}
+        
     }
 }
 
@@ -66,6 +95,7 @@ void ofApp::draw() {
 		projectorFrameBuffer.readToPixels(pixels);
 
 		videoSenders[i].send(pixels);
+
         if (i == previewInstanceIndex) {
             projectorFrameBuffer.draw(0, 0);
         }
