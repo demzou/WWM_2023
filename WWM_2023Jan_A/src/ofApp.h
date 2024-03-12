@@ -4,7 +4,7 @@
 #include "ofxOsc.h"
 #include "ofxNDISender.h"
 #include "ofxNDISendStream.h"
-#include "../wwmProjector.h"
+#include "wwmProjector.h"
 
 // listening on
 #define PORT 6001

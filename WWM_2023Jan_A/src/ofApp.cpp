@@ -46,7 +46,8 @@ void ofApp::setup() {
 * 
 ***/
 void ofApp::update() {
-
+    // Display the framerate in the window title    
+    ofSetWindowTitle(ofToString(ofGetFrameRate()));
 
     //OSC
     if (messageBuffer.size() > maxBufferSize) messageBuffer.pop_back();
