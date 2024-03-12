@@ -4,6 +4,7 @@
 #include "ofxOsc.h"
 #include "ofxNDISender.h"
 #include "ofxNDISendStream.h"
+#include "../wwmProjector.h"
 
 // listening on
 #define PORT 6001
@@ -11,7 +12,8 @@
 #define WINDOW_HEIGHT 720
 // max number of strings to display
 #define NUM_MSG_STRINGS 20
-#define NDI_IDENTIFIER "WWM Projector"
+#define NDI_IDENTIFIER_PREFIX "WWM-Projector-"
+#define NUMBER_OF_PROJECTORS 3
 
 class ofApp : public ofBaseApp {
 
@@ -25,19 +27,12 @@ public:
     ofxOscReceiver receiver;
     deque<string> messageBuffer;
     int maxBufferSize = 20;
+    int previewInstanceIndex = 0;
 
-    //Values
-    float dist;
-    int maxRad;
 
-    vector<float> noiseSeeds;
-    float angleStep, stepSize, maxStepSize, radius;
-    int sunLocX, sunLocY, totalRays, maxTotalRays;
-    int radAmt;
-    bool invite;
-    ofFbo frameBuffer;
 private:
- 	ofxNDISender sender;
- 	ofxNDISendVideo video;
- 	// ofVideoGrabber camera;
+ 	vector<ofxNDISender> senders;
+ 	vector<ofxNDISendVideo> videoSenders;
+    vector<wwmProjector> projectors;
+
 };
