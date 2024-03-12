@@ -2,8 +2,8 @@
 
 #include "ofMain.h"
 #include "ofxOsc.h"
-// #include "ofxNDISender.h"
-// #include "ofxNDISendStream.h"
+#include "ofxNDISender.h"
+#include "ofxNDISendStream.h"
 
 // listening on
 #define PORT 6001
@@ -11,6 +11,7 @@
 #define WINDOW_HEIGHT 720
 // max number of strings to display
 #define NUM_MSG_STRINGS 20
+#define NDI_IDENTIFIER "WWM Projector"
 
 class ofApp : public ofBaseApp {
 
@@ -35,8 +36,8 @@ public:
     int radAmt;
     bool invite;
     ofFbo frameBuffer;
-// private:
-// 	ofxNDISender sender;
-// 	ofxNDISendVideo video;
-// 	ofVideoGrabber camera;
+private:
+ 	ofxNDISender sender;
+ 	ofxNDISendVideo video;
+ 	// ofVideoGrabber camera;
 };

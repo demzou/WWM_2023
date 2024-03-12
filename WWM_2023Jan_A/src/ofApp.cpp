@@ -34,6 +34,11 @@ void ofApp::setup() {
 
     frameBuffer.allocate(WINDOW_WIDTH, WINDOW_HEIGHT, GL_RGBA32F_ARB);
 
+    if (sender.setup(NDI_IDENTIFIER)) {
+        video.setup(sender);
+        video.setAsync(true);
+    }
+
 
 }
 
@@ -61,7 +66,6 @@ void ofApp::update() {
             messageBuffer.push_front(m.getAddress() + ": UNRECOGNIZED MESSAGE");
         }
     }
-
 }
 
 //--------------------------------------------------------------
@@ -179,6 +183,11 @@ void ofApp::draw() {
         }
 
     frameBuffer.end();
+
+    ofPixels pixels;
+    frameBuffer.readToPixels(pixels);
+    video.send(pixels);
+
     frameBuffer.draw(0,0);
 
 }
