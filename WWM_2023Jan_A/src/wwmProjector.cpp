@@ -30,7 +30,7 @@ ofFbo wwmProjector::draw()
         drawInvitation();
     frameBuffer.end();
 
-	return frameBuffer;
+    return frameBuffer;
 }
 
 
