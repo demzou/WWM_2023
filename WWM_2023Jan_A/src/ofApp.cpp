@@ -30,6 +30,11 @@ void ofApp::setup() {
             videoSenders[i].setAsync(true);
         }
 	}
+
+    // GUI
+    gui.setup();
+    gui.add(framerateLabel.setup("Framerate", ""));
+    gui.add(previewInstanceIndex.setup("Preview Instance", 0, 0, NUMBER_OF_PROJECTORS - 1));
  }
 
 //--------------------------------------------------------------
@@ -46,8 +51,9 @@ void ofApp::setup() {
 * 
 ***/
 void ofApp::update() {
-    // Display the framerate in the window title    
+    // Display the framerate in the window title & GUI  
     ofSetWindowTitle(ofToString(ofGetFrameRate()));
+    framerateLabel = ofToString(ofGetFrameRate());  
 
     //OSC
     if (messageBuffer.size() > maxBufferSize) messageBuffer.pop_back();
@@ -56,7 +62,7 @@ void ofApp::update() {
     while (receiver.hasWaitingMessages()) {
         // get the next message
         ofxOscMessage m;
-        receiver.getNextMessage(m);
+		receiver.getNextMessage(m);
 
 
         // parse out the path elements
@@ -100,6 +106,7 @@ void ofApp::draw() {
         if (i == previewInstanceIndex) {
             projectorFrameBuffer.draw(0, 0);
         }
+        gui.draw();
 	}
 }
 

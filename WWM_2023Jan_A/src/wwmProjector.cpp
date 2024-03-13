@@ -1,26 +1,22 @@
 #include "wwmProjector.h"
 
 // add a constructor
-wwmProjector::wwmProjector(int windowWidth, int windowHeight)
+wwmProjector::wwmProjector(const int windowWidth, const int windowHeight)
+    : dist(0)
+    , maxRad(ofGetHeight() / 2)
+    , maxTotalRays(30)
+    , totalRays(10)
+    , maxStepSize(100)
+    , stepSize(100)
+    , radAmt(0)
+    , invite(false)
 {
-    dist = 0;
-    maxRad = ofGetHeight() / 2;
-
-    maxTotalRays = 30;
-    totalRays = 10;
-    maxStepSize = 100;
-    stepSize = 100;
-
-
+ 
     for (int i = 0; i < maxTotalRays; i++) {
         noiseSeeds.push_back(ofRandom(0, 10000));
     }
 
-    radAmt = 0;
-    invite = false;
-
     frameBuffer.allocate(windowWidth, windowHeight, GL_RGBA32F_ARB);
-
 }
 
 

@@ -5,6 +5,7 @@
 #include "ofxNDISender.h"
 #include "ofxNDISendStream.h"
 #include "wwmProjector.h"
+#include "ofxGui.h"
 
 // listening on
 #define PORT 6001
@@ -27,8 +28,11 @@ public:
     ofxOscReceiver receiver;
     deque<string> messageBuffer;
     int maxBufferSize = 20;
-    int previewInstanceIndex = 0;
 
+    // GUI
+    ofxPanel gui;
+    ofxLabel framerateLabel;
+    ofxIntSlider previewInstanceIndex;
 
 private:
  	vector<ofxNDISender> senders;
