@@ -121,58 +121,76 @@
 			<UniqueIdentifier>{d8376475-7454-4a24-b08a-aac121d3ad6f}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="addons">
-			<UniqueIdentifier>{529C7FEB--3BE-1-40-D1-A-723-FA33149585AB}</UniqueIdentifier>
+			<UniqueIdentifier>{82FB9E69--59C-B-4A-44-A-EBB-1B061C24EA5B}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="addons\ofxGui">
-			<UniqueIdentifier>{8A1851F8--2C0-C-40-03-A-E12-3104D83F8A39}</UniqueIdentifier>
+			<UniqueIdentifier>{26448588--4ED-C-4F-BF-9-7DB-94A72D8BF00A}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="addons\ofxGui\src">
-			<UniqueIdentifier>{D965686A--37B-4-40-42-9-4A6-043AC15989C5}</UniqueIdentifier>
+			<UniqueIdentifier>{9281FD32--5C4-F-43-7D-A-9B5-3B9C7D4BAD2A}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="addons\ofxNDI">
-			<UniqueIdentifier>{7CAFA4A5--AA4-3-4C-A8-B-2E0-6F9BC8EE1A7A}</UniqueIdentifier>
+			<UniqueIdentifier>{6A0B344B--437-8-47-37-B-1CB-C97A68032BA3}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="addons\ofxNDI\src">
-			<UniqueIdentifier>{00BA9979--E0B-C-43-B9-B-B66-4C7759D86EA5}</UniqueIdentifier>
+			<UniqueIdentifier>{4754018B--319-B-42-CB-B-307-C3CA6E0201B3}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="addons\ofxNDI\src\utils">
-			<UniqueIdentifier>{785E93AB--7D8-1-4F-99-8-215-0DD27D1BDEBF}</UniqueIdentifier>
+			<UniqueIdentifier>{5FECFDF8--715-0-4E-D1-9-BA5-8309352C9E14}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="addons\ofxNDI\libs">
-			<UniqueIdentifier>{D13EFDC9--EB9-F-4E-3B-B-38E-5FB344E309F9}</UniqueIdentifier>
+			<UniqueIdentifier>{7099EAD0--607-A-4A-4A-A-9ED-3D09A36587CC}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="addons\ofxNDI\libs\NDI">
-			<UniqueIdentifier>{8DEE361C--58B-E-4C-AA-8-3DE-9B19D4F03D77}</UniqueIdentifier>
+			<UniqueIdentifier>{7AED376A--D18-9-40-F2-A-5B3-5928DDE58D98}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="addons\ofxNDI\libs\NDI\include">
-			<UniqueIdentifier>{AE3E25DB--839-5-4D-27-A-635-321ECDC6EC84}</UniqueIdentifier>
+			<UniqueIdentifier>{130CD8AD--021-3-46-88-A-62B-74959EBF12EF}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="addons\ofxNDI\libs\utils">
-			<UniqueIdentifier>{B46B27E4--5D4-B-42-F7-8-6D0-1DD97EB2773D}</UniqueIdentifier>
+			<UniqueIdentifier>{6B0918ED--C2A-5-43-73-9-98D-CF2F900F5103}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="addons\ofxOsc">
-			<UniqueIdentifier>{B5A7DC45--4F1-5-4E-D7-B-72D-626F764BACD2}</UniqueIdentifier>
+			<UniqueIdentifier>{D9624137--526-3-46-8C-B-BEA-B2D6EED7E7FD}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="addons\ofxOsc\src">
-			<UniqueIdentifier>{16A9BB8B--57B-F-41-7C-8-695-CBF4B475BBD7}</UniqueIdentifier>
+			<UniqueIdentifier>{11B0C726--A75-D-40-D7-B-E0F-F2481FFE1A59}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="addons\ofxOsc\libs">
-			<UniqueIdentifier>{756F4EC0--9AA-F-41-27-B-CA4-931AB9ABE602}</UniqueIdentifier>
+			<UniqueIdentifier>{61DD9D9E--A3B-F-40-8C-9-AE6-2B8550498832}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="addons\ofxOsc\libs\oscpack">
-			<UniqueIdentifier>{F8E6E91F--F23-3-49-98-B-CC6-E09D81598C60}</UniqueIdentifier>
+			<UniqueIdentifier>{FCFDF2AB--514-3-46-2A-8-AA4-E39D0AF42F99}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="addons\ofxOsc\libs\oscpack\src">
-			<UniqueIdentifier>{36F8C016--DD1-C-40-65-9-782-93284AFBD226}</UniqueIdentifier>
+			<UniqueIdentifier>{04C04D9E--650-6-4A-0F-B-08E-B80B643CC810}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="addons\ofxOsc\libs\oscpack\src\ip">
-			<UniqueIdentifier>{9F3EEBAA--F67-7-4A-F1-A-71E-377CA8ADD66C}</UniqueIdentifier>
+			<UniqueIdentifier>{41695B58--535-5-43-24-8-BA6-A26BFAC45CFC}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="addons\ofxOsc\libs\oscpack\src\ip\win32">
-			<UniqueIdentifier>{A7523E98--7CE-F-45-93-9-D79-7B300744691B}</UniqueIdentifier>
+			<UniqueIdentifier>{E34938EB--EA2-A-47-63-8-B81-606C9BF094EB}</UniqueIdentifier>
 		</Filter>
 		<Filter Include="addons\ofxOsc\libs\oscpack\src\osc">
-			<UniqueIdentifier>{623FC2E8--3DC-2-48-4E-A-64A-33D2DCAB08BB}</UniqueIdentifier>
+			<UniqueIdentifier>{1B38C9AF--05B-5-4E-89-B-9A1-78336E68F3C2}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxTclap">
+			<UniqueIdentifier>{82444C6E--38D-9-4B-DC-8-13C-BBB170030581}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxTclap\src">
+			<UniqueIdentifier>{1D57F449--805-F-4F-EB-B-5B2-E3A9FFFD084D}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxTclap\libs">
+			<UniqueIdentifier>{6C39E924--2DC-0-4D-3A-A-C33-B7B6FFB26178}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxTclap\libs\tclap">
+			<UniqueIdentifier>{5B23C4C3--D67-8-47-40-B-160-02514A9A786D}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxTclap\libs\tclap\include">
+			<UniqueIdentifier>{A9ECEB57--017-B-46-2D-A-B19-3AE9F180E719}</UniqueIdentifier>
+		</Filter>
+		<Filter Include="addons\ofxTclap\libs\tclap\include\tclap">
+			<UniqueIdentifier>{6DFB9BB5--17B-5-49-BB-A-A42-4C1C06DCDB55}</UniqueIdentifier>
 		</Filter>
 	</ItemGroup>
 	<ItemGroup>
@@ -358,6 +376,84 @@
 		</ClInclude>
 		<ClInclude Include="..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscTypes.h">
 			<Filter>addons\ofxOsc\libs\oscpack\src\osc</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxTclap\src\ofxTclap.h">
+			<Filter>addons\ofxTclap\src</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\Arg.h">
+			<Filter>addons\ofxTclap\libs\tclap\include\tclap</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\ArgException.h">
+			<Filter>addons\ofxTclap\libs\tclap\include\tclap</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\ArgTraits.h">
+			<Filter>addons\ofxTclap\libs\tclap\include\tclap</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\CmdLine.h">
+			<Filter>addons\ofxTclap\libs\tclap\include\tclap</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\CmdLineInterface.h">
+			<Filter>addons\ofxTclap\libs\tclap\include\tclap</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\CmdLineOutput.h">
+			<Filter>addons\ofxTclap\libs\tclap\include\tclap</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\Constraint.h">
+			<Filter>addons\ofxTclap\libs\tclap\include\tclap</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\DocBookOutput.h">
+			<Filter>addons\ofxTclap\libs\tclap\include\tclap</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\HelpVisitor.h">
+			<Filter>addons\ofxTclap\libs\tclap\include\tclap</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\IgnoreRestVisitor.h">
+			<Filter>addons\ofxTclap\libs\tclap\include\tclap</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\MultiArg.h">
+			<Filter>addons\ofxTclap\libs\tclap\include\tclap</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\MultiSwitchArg.h">
+			<Filter>addons\ofxTclap\libs\tclap\include\tclap</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\OptionalUnlabeledTracker.h">
+			<Filter>addons\ofxTclap\libs\tclap\include\tclap</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\sstream.h">
+			<Filter>addons\ofxTclap\libs\tclap\include\tclap</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\StandardTraits.h">
+			<Filter>addons\ofxTclap\libs\tclap\include\tclap</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\StdOutput.h">
+			<Filter>addons\ofxTclap\libs\tclap\include\tclap</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\SwitchArg.h">
+			<Filter>addons\ofxTclap\libs\tclap\include\tclap</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\UnlabeledMultiArg.h">
+			<Filter>addons\ofxTclap\libs\tclap\include\tclap</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\UnlabeledValueArg.h">
+			<Filter>addons\ofxTclap\libs\tclap\include\tclap</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\ValueArg.h">
+			<Filter>addons\ofxTclap\libs\tclap\include\tclap</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\ValuesConstraint.h">
+			<Filter>addons\ofxTclap\libs\tclap\include\tclap</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\VersionVisitor.h">
+			<Filter>addons\ofxTclap\libs\tclap\include\tclap</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\Visitor.h">
+			<Filter>addons\ofxTclap\libs\tclap\include\tclap</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\XorHandler.h">
+			<Filter>addons\ofxTclap\libs\tclap\include\tclap</Filter>
+		</ClInclude>
+		<ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\ZshCompletionOutput.h">
+			<Filter>addons\ofxTclap\libs\tclap\include\tclap</Filter>
 		</ClInclude>
 	</ItemGroup>
 	<ItemGroup>

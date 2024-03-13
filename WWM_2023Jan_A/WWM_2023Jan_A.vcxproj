@@ -61,7 +61,7 @@
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxGui\src;..\..\..\addons\ofxNDI\libs\NDI\include;..\..\..\addons\ofxNDI\libs\utils;..\..\..\addons\ofxNDI\src;..\..\..\addons\ofxNDI\src\utils;..\..\..\addons\ofxOsc\libs;..\..\..\addons\ofxOsc\libs\oscpack;..\..\..\addons\ofxOsc\libs\oscpack\src;..\..\..\addons\ofxOsc\libs\oscpack\src\ip;..\..\..\addons\ofxOsc\libs\oscpack\src\ip\posix;..\..\..\addons\ofxOsc\libs\oscpack\src\osc;..\..\..\addons\ofxOsc\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxGui\src;..\..\..\addons\ofxNDI\libs\NDI\include;..\..\..\addons\ofxNDI\libs\utils;..\..\..\addons\ofxNDI\src;..\..\..\addons\ofxNDI\src\utils;..\..\..\addons\ofxOsc\libs;..\..\..\addons\ofxOsc\libs\oscpack;..\..\..\addons\ofxOsc\libs\oscpack\src;..\..\..\addons\ofxOsc\libs\oscpack\src\ip;..\..\..\addons\ofxOsc\libs\oscpack\src\ip\posix;..\..\..\addons\ofxOsc\libs\oscpack\src\osc;..\..\..\addons\ofxOsc\src;..\..\..\addons\ofxTclap\libs;..\..\..\addons\ofxTclap\libs\tclap;..\..\..\addons\ofxTclap\libs\tclap\include;..\..\..\addons\ofxTclap\libs\tclap\include\tclap;..\..\..\addons\ofxTclap\src</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <ObjectFileName>$(IntDir)\Build\%(RelativeDir)\$(Configuration)\</ObjectFileName>
@@ -84,7 +84,7 @@
       <PreprocessorDefinitions>%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxGui\src;..\..\..\addons\ofxNDI\libs\NDI\include;..\..\..\addons\ofxNDI\libs\utils;..\..\..\addons\ofxNDI\src;..\..\..\addons\ofxNDI\src\utils;..\..\..\addons\ofxOsc\libs;..\..\..\addons\ofxOsc\libs\oscpack;..\..\..\addons\ofxOsc\libs\oscpack\src;..\..\..\addons\ofxOsc\libs\oscpack\src\ip;..\..\..\addons\ofxOsc\libs\oscpack\src\ip\posix;..\..\..\addons\ofxOsc\libs\oscpack\src\osc;..\..\..\addons\ofxOsc\src</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);src;..\..\..\addons\ofxGui\src;..\..\..\addons\ofxNDI\libs\NDI\include;..\..\..\addons\ofxNDI\libs\utils;..\..\..\addons\ofxNDI\src;..\..\..\addons\ofxNDI\src\utils;..\..\..\addons\ofxOsc\libs;..\..\..\addons\ofxOsc\libs\oscpack;..\..\..\addons\ofxOsc\libs\oscpack\src;..\..\..\addons\ofxOsc\libs\oscpack\src\ip;..\..\..\addons\ofxOsc\libs\oscpack\src\ip\posix;..\..\..\addons\ofxOsc\libs\oscpack\src\osc;..\..\..\addons\ofxOsc\src;..\..\..\addons\ofxTclap\libs;..\..\..\addons\ofxTclap\libs\tclap;..\..\..\addons\ofxTclap\libs\tclap\include;..\..\..\addons\ofxTclap\libs\tclap\include\tclap;..\..\..\addons\ofxTclap\src</AdditionalIncludeDirectories>
       <CompileAs>CompileAsCpp</CompileAs>
       <ObjectFileName>$(IntDir)\Build\%(RelativeDir)\$(Configuration)\</ObjectFileName>
       <LanguageStandard>stdcpp17</LanguageStandard>
@@ -202,6 +202,32 @@
     <ClInclude Include="..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscPrintReceivedElements.h" />
     <ClInclude Include="..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscReceivedElements.h" />
     <ClInclude Include="..\..\..\addons\ofxOsc\libs\oscpack\src\osc\OscTypes.h" />
+    <ClInclude Include="..\..\..\addons\ofxTclap\src\ofxTclap.h" />
+    <ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\Arg.h" />
+    <ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\ArgException.h" />
+    <ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\ArgTraits.h" />
+    <ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\CmdLine.h" />
+    <ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\CmdLineInterface.h" />
+    <ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\CmdLineOutput.h" />
+    <ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\Constraint.h" />
+    <ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\DocBookOutput.h" />
+    <ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\HelpVisitor.h" />
+    <ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\IgnoreRestVisitor.h" />
+    <ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\MultiArg.h" />
+    <ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\MultiSwitchArg.h" />
+    <ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\OptionalUnlabeledTracker.h" />
+    <ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\sstream.h" />
+    <ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\StandardTraits.h" />
+    <ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\StdOutput.h" />
+    <ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\SwitchArg.h" />
+    <ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\UnlabeledMultiArg.h" />
+    <ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\UnlabeledValueArg.h" />
+    <ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\ValueArg.h" />
+    <ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\ValuesConstraint.h" />
+    <ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\VersionVisitor.h" />
+    <ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\Visitor.h" />
+    <ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\XorHandler.h" />
+    <ClInclude Include="..\..\..\addons\ofxTclap\libs\tclap\include\tclap\ZshCompletionOutput.h" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">

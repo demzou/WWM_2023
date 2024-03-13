@@ -7,18 +7,14 @@
 #include "wwmProjector.h"
 #include "ofxGui.h"
 
-// listening on
-#define PORT 6001
-#define WINDOW_WIDTH 1280
-#define WINDOW_HEIGHT 720
 // max number of strings to display
 #define NUM_MSG_STRINGS 20
-#define NDI_IDENTIFIER_PREFIX "WWM-Projector-"
-#define NUMBER_OF_PROJECTORS 3
 
 class ofApp : public ofBaseApp {
 
 public:
+    // Custom constructor to pass in command line arguments
+    ofApp(int port, int projectorCount, int width, int height, string ndiPrefix);
     void setup();
     void update();
     void draw();
@@ -35,6 +31,11 @@ public:
     ofxIntSlider previewInstanceIndex;
 
 private:
+    int port; // OSC port to listen on
+	int projectorCount; // Number of projectors to create
+    int windowWidth;
+    int windowHeight;
+    string ndiPrefix;
  	vector<ofxNDISender> senders;
  	vector<ofxNDISendVideo> videoSenders;
     vector<wwmProjector> projectors;
