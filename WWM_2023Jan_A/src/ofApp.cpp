@@ -33,14 +33,14 @@ void ofApp::setup() {
 
    
     for (int i = 0; i < projectorCount; i++) {
-		wwmProjector projector = wwmProjector(windowWidth, windowHeight);
-		projectors.push_back(projector);
+        wwmProjector projector = wwmProjector(windowWidth, windowHeight);
+        projectors.push_back(projector);
 	
         if (senders[i].setup(ndiPrefix + ofToString(i))) {
             videoSenders[i].setup(senders[i]);
             videoSenders[i].setAsync(true);
         }
-	}
+    }
 
     // GUI
     gui.setup();
@@ -73,7 +73,7 @@ void ofApp::update() {
     while (receiver.hasWaitingMessages()) {
         // get the next message
         ofxOscMessage m;
-		receiver.getNextMessage(m);
+        receiver.getNextMessage(m);
 
 
         // parse out the path elements
@@ -86,21 +86,21 @@ void ofApp::update() {
 
         // check for valid projector index
         if (projectorIndex >= projectorCount) {
-			messageBuffer.push_front(m.getAddress() + ": UNRECOGNIZED PROJECTOR INDEX");
-			continue;
-		}
+            messageBuffer.push_front(m.getAddress() + ": UNRECOGNIZED PROJECTOR INDEX");
+            continue;
+        }
         
         // execute the message
         if (message == "dist") {
-			projectors[projectorIndex].dist = m.getArgAsFloat(0);
-		}
+            projectors[projectorIndex].dist = m.getArgAsFloat(0);
+        }
         else if (message == "invite") {
-			projectors[projectorIndex].radAmt = 0;
-			projectors[projectorIndex].invite = true;
-		}
+            projectors[projectorIndex].radAmt = 0;
+            projectors[projectorIndex].invite = true;
+        }
         else {
-			messageBuffer.push_front(m.getAddress() + ": UNRECOGNIZED MESSAGE");
-		}
+            messageBuffer.push_front(m.getAddress() + ": UNRECOGNIZED MESSAGE");
+        }
         
     }
 
@@ -109,17 +109,17 @@ void ofApp::update() {
 //--------------------------------------------------------------
 void ofApp::draw() {
     for (int i = 0; i < projectorCount; i++) {
-		ofPixels pixels;
-		ofFbo projectorFrameBuffer = projectors[i].draw();
-		projectorFrameBuffer.readToPixels(pixels);
+        ofPixels pixels;
+        ofFbo projectorFrameBuffer = projectors[i].draw();
+        projectorFrameBuffer.readToPixels(pixels);
 
-		videoSenders[i].send(pixels);
+        videoSenders[i].send(pixels);
 
         if (i == previewInstanceIndex) {
             projectorFrameBuffer.draw(0, 0);
         }
         gui.draw();
-	}
+    }
 }
 
 //--------------------------------------------------------------
@@ -127,8 +127,8 @@ void ofApp::keyPressed(int key) {
     if (key == 'f') {
         ofToggleFullscreen();
         for (int i = 0; i < projectorCount; i++) {
-			projectors[1].maxRad = ofGetHeight() / 2.5;
-		}
+            projectors[1].maxRad = ofGetHeight() / 2.5;
+        }
     }
 
 }

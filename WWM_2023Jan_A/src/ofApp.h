@@ -32,12 +32,12 @@ public:
 
 private:
     int port; // OSC port to listen on
-	int projectorCount; // Number of projectors to create
+    int projectorCount; // Number of projectors to create
     int windowWidth;
     int windowHeight;
     string ndiPrefix;
- 	vector<ofxNDISender> senders;
- 	vector<ofxNDISendVideo> videoSenders;
+    vector<ofxNDISender> senders;
+    vector<ofxNDISendVideo> videoSenders;
     vector<wwmProjector> projectors;
 
 };
