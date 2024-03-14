@@ -3,7 +3,7 @@
 // add a constructor
 wwmProjector::wwmProjector(const int windowWidth, const int windowHeight)
     : dist(0)
-    , maxRad(ofGetHeight() / 2)
+    , maxRad(windowHeight / 2)
     , maxTotalRays(30)
     , totalRays(10)
     , maxStepSize(100)
@@ -36,12 +36,13 @@ ofFbo wwmProjector::draw()
 
 void wwmProjector::drawSpotlight()
 {
-    float radius1 = (1 - dist) * maxRad / 0.85;
+    // DELETE: float spotlightRadius = (1 - dist) * maxRad / 0.85;
 
     totalRays = ofMap(dist, 0, 1, 4, maxTotalRays, true);
     stepSize = ofMap(dist, 0, 1, 1, maxStepSize, true);
 
     angleStep = 360.0 / totalRays;
+
 
     ofPushStyle();
         ofColor spotCol;
@@ -56,22 +57,27 @@ void wwmProjector::drawSpotlight()
             int alpha = ofMap(dist, 0.4, 0.6, 255, 255, true);
             spotCol = ofColor(alpha);
         }
+         
+        float spotlightOuterAmount = 1;
+        float spotlightInnerAmount = 0.7;
 
-        int currMaxRad = ofMap(dist, 0, 1, maxRad, maxRad * 0.7);
-
+        int currMaxRad = ofMap(dist, 0, 1, maxRad * spotlightOuterAmount , maxRad * spotlightInnerAmount);
+        float radiusOfSolidSpotlight = (1 - dist) * 0.3 * currMaxRad;
 
         ofSetColor(spotCol);
         ofFill();
-        ofDrawCircle(ofGetWidth() / 2, ofGetHeight() / 2, (1 - dist) * 0.3 * currMaxRad);
+        // Draw the solid spotlight
+        ofDrawCircle(frameBuffer.getWidth()/ 2, frameBuffer.getHeight() / 2,radiusOfSolidSpotlight);
     ofPopStyle();
 
-    for (int i = (1 - dist) * 0.3 * currMaxRad; i < currMaxRad; i++) {
+    // Draw the spotlight gradient
+    for (int i = radiusOfSolidSpotlight; i < currMaxRad; i++) {
         ofPushStyle();
-            float fade = ofMap(i, (1 - dist) * 0.3 * currMaxRad, currMaxRad, 1, 0, true);
+            float fade = ofMap(i, radiusOfSolidSpotlight, currMaxRad, 1, 0, true);
             ofSetColor(fade * spotCol);
             ofNoFill();
             ofSetLineWidth(2);
-            ofDrawCircle(ofGetWidth() / 2, ofGetHeight() / 2, i);
+            ofDrawCircle(frameBuffer.getWidth() / 2, frameBuffer.getHeight() / 2, i);
         ofPopStyle();
     }
 }
@@ -79,14 +85,17 @@ void wwmProjector::drawSpotlight()
 
 void wwmProjector::drawLine()
 {
+    float pinkThreshold = 0.6;
+    float visibilityStartingThreshhold = 0.4;
+    float visibilityEndingThreshhold = 0.5;
     //colour
     ofPushMatrix();
         ofPushStyle();
-            int alpha2 = ofMap(dist, 0.4, 0.5, 0, 255, true);
-            if (dist >= 0.6) {
+            int alpha2 = ofMap(dist, visibilityStartingThreshhold, visibilityEndingThreshhold, 0, 255, true);
+            if (dist >= pinkThreshold) {
                 ofColor white = ofColor(255);
                 ofColor pink = ofColor(255, 178, 178);
-                float colAmt = ofMap(dist, 0.6, 0.75, 0, 1, true);
+                float colAmt = ofMap(dist, pinkThreshold, 0.75, 0, 1, true);
                 ofColor newCol = white.lerp(pink, colAmt);
 
                 ofSetColor(newCol, alpha2);
@@ -99,29 +108,36 @@ void wwmProjector::drawLine()
             ofSetLineWidth(6);
 
 
-            float dist2 = ofMap(dist, 0, 1, -0.8, 0.7, true);
-            float radius2 = (1 - dist2) * maxRad;
 
-            ofTranslate(ofGetWidth() / 2, ofGetHeight() / 2);
+            float lineInnerAmount = 0.25;
+            float lineOuterAmount = 0.98;
 
-            ofBeginShape();
-                ofCurveVertex(cos(ofDegToRad(-angleStep)) * (radius2 + ofNoise(noiseSeeds[totalRays - 1]) * stepSize), sin(ofDegToRad(-angleStep)) * (radius2 + ofNoise(noiseSeeds[totalRays - 1]) * stepSize));
-                for (int i = 0; i < totalRays; i++) {
+            if (dist >= visibilityStartingThreshhold) {
+				float lineRadius = ofMap(dist, visibilityStartingThreshhold, 1, lineOuterAmount * maxRad, lineInnerAmount * maxRad, true);
 
-                    float noiseRadius = ofNoise(noiseSeeds[i]) * stepSize;
-                    ofPoint pointLocation;
-                    pointLocation.x = cos(ofDegToRad(angleStep * i)) * (radius2 + noiseRadius);
-                    pointLocation.y = sin(ofDegToRad(angleStep * i)) * (radius2 + noiseRadius);
-                    ofCurveVertex(pointLocation);
-                    noiseSeeds[i] += 0.01;
-                }
-                ofCurveVertex(cos(ofDegToRad(angleStep * 0)) * (radius2 + ofNoise(noiseSeeds[0]) * stepSize), sin(ofDegToRad(angleStep * 0)) * (radius2 + ofNoise(noiseSeeds[0]) * stepSize));
+				ofTranslate(frameBuffer.getWidth() / 2, frameBuffer.getHeight() / 2);
 
-                ofCurveVertex(cos(ofDegToRad(angleStep)) * (radius2 + ofNoise(noiseSeeds[1]) * stepSize), sin(ofDegToRad(angleStep)) * (radius2 + ofNoise(noiseSeeds[1]) * stepSize));
+				ofBeginShape();
+					ofCurveVertex(cos(ofDegToRad(-angleStep)) * (lineRadius + ofNoise(noiseSeeds[totalRays - 1]) * stepSize), sin(ofDegToRad(-angleStep)) * (lineRadius + ofNoise(noiseSeeds[totalRays - 1]) * stepSize));
+					for (int i = 0; i < totalRays; i++) {
 
-            ofEndShape(true);
+						float noiseRadius = ofNoise(noiseSeeds[i]) * stepSize;
+						ofPoint pointLocation;
+						pointLocation.x = cos(ofDegToRad(angleStep * i)) * (lineRadius + noiseRadius);
+						pointLocation.y = sin(ofDegToRad(angleStep * i)) * (lineRadius + noiseRadius);
+						ofCurveVertex(pointLocation);
+						noiseSeeds[i] += 0.01;
+					}
+					ofCurveVertex(cos(ofDegToRad(angleStep * 0)) * (lineRadius + ofNoise(noiseSeeds[0]) * stepSize), sin(ofDegToRad(angleStep * 0)) * (lineRadius + ofNoise(noiseSeeds[0]) * stepSize));
 
-        ofPopStyle();
+					ofCurveVertex(cos(ofDegToRad(angleStep)) * (lineRadius + ofNoise(noiseSeeds[1]) * stepSize), sin(ofDegToRad(angleStep)) * (lineRadius + ofNoise(noiseSeeds[1]) * stepSize));
+
+				ofEndShape(true);
+
+
+
+            }
+	   ofPopStyle();
     ofPopMatrix();
 }
 
@@ -133,12 +149,12 @@ void wwmProjector::drawInvitation()
             ofSetColor(255);
             ofNoFill();
             ofSetLineWidth(6);
-            ofDrawCircle(ofGetWidth() / 2, ofGetHeight() / 2, radAmt);
+            ofDrawCircle(frameBuffer.getWidth() / 2, frameBuffer.getHeight() / 2, radAmt);
         ofPopStyle();
 
         radAmt += 10;
 
-        if (radAmt >= maxRad * 2) {
+        if (radAmt >= maxRad)  {
             invite = false;
         }
     }

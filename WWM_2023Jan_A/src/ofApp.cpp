@@ -127,7 +127,7 @@ void ofApp::keyPressed(int key) {
     if (key == 'f') {
         ofToggleFullscreen();
         for (int i = 0; i < projectorCount; i++) {
-            projectors[1].maxRad = ofGetHeight() / 2.5;
+            projectors[i].maxRad = ofGetHeight() / 2;
         }
     }
 
