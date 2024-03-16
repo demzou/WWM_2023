@@ -1,13 +1,12 @@
 #include "ofApp.h"
 
 
-ofApp::ofApp(int port, int projectorCount, int width, int height, string ndiPrefix, float fadeDuration) 
+ofApp::ofApp(int port, int projectorCount, int width, int height, string ndiPrefix) 
     : port(port)
     , projectorCount(projectorCount)
     , windowWidth(width)
     , windowHeight(height)
     , ndiPrefix(ndiPrefix)
-    , fadeDuration(fadeDuration)
 {
 
 }
@@ -34,7 +33,7 @@ void ofApp::setup() {
 
    
     for (int i = 0; i < projectorCount; i++) {
-        wwmProjector projector = wwmProjector(windowWidth, windowHeight, fadeDuration);
+        wwmProjector projector = wwmProjector(windowWidth, windowHeight);
         projectors.push_back(projector);
 	
         if (senders[i].setup(ndiPrefix + ofToString(i))) {
@@ -99,8 +98,11 @@ void ofApp::update() {
             projectors[projectorIndex].radAmt = 0;
             projectors[projectorIndex].invite = true;
         }
-        else if (message == "fade") {
-            projectors[projectorIndex].fade = (m.getArgAsInt(0) == 1) ? true : false;
+        else if (message == "masterDimmer") {
+            float dimmerValue = m.getArgAsFloat(0);
+            if(dimmerValue < 0) dimmerValue = 0;
+            if(dimmerValue > 1) dimmerValue = 1;
+            projectors[projectorIndex].masterDimmer = dimmerValue;
         }
         else {
             messageBuffer.push_front(m.getAddress() + ": UNRECOGNIZED MESSAGE");

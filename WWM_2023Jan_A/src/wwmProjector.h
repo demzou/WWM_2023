@@ -6,15 +6,14 @@ class wwmProjector
 {
 
 public:
-	wwmProjector(int windowWidth, int windowHeight, float fadeDuration);
+	wwmProjector(int windowWidth, int windowHeight);
 	ofFbo draw();
 
     float dist;
     int maxRad;
     int radAmt;
     bool invite;
-    bool fade;
-    float fadeDuration;
+    float masterDimmer;
 
 
 private:
@@ -28,7 +27,7 @@ private:
     void drawSpotlight();
     void drawLine();
     void drawInvitation();
-    void drawMask();
+    void drawMasterDimmer();
    
 };
 

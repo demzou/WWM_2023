@@ -1,7 +1,7 @@
 #include "wwmProjector.h"
 
 // add a constructor
-wwmProjector::wwmProjector(const int windowWidth, const int windowHeight, float fadeDuration)
+wwmProjector::wwmProjector(const int windowWidth, const int windowHeight)
     : dist(0)
     , maxRad(windowHeight / 2)
     , maxTotalRays(30)
@@ -10,9 +10,8 @@ wwmProjector::wwmProjector(const int windowWidth, const int windowHeight, float 
     , stepSize(100)
     , radAmt(0)
     , invite(false)
-    , fade(false)
+    , masterDimmer(1)
     , maskLevel(0)
-    , fadeDuration(fadeDuration)
 {
  
     for (int i = 0; i < maxTotalRays; i++) {
@@ -31,7 +30,7 @@ ofFbo wwmProjector::draw()
         drawSpotlight();
         drawLine();
         drawInvitation();
-        drawMask();
+        drawMasterDimmer();
     frameBuffer.end();
 
     return frameBuffer;
@@ -164,18 +163,12 @@ void wwmProjector::drawInvitation()
     }
 }
 
-void wwmProjector::drawMask()
+void wwmProjector::drawMasterDimmer()
 {
-    if (fade) {
-        int maskLevelDelta = ceil(255 / (ofGetFrameRate() * fadeDuration));
-        maskLevel += maskLevelDelta;
-        if (maskLevel >= 255) {
-			maskLevel = 255;
-		}
-     	ofPushStyle();
-			ofSetColor(0,0,0,maskLevel);
-			ofFill();
-			ofDrawRectangle(0, 0, frameBuffer.getWidth(), frameBuffer.getHeight());
-	    ofPopStyle();
-	}
+	maskLevel = ofMap(masterDimmer, 0, 1, 255, 0);
+	ofPushStyle();
+		ofSetColor(0,0,0,maskLevel);
+		ofFill();
+		ofDrawRectangle(0, 0, frameBuffer.getWidth(), frameBuffer.getHeight());
+	ofPopStyle();
 }

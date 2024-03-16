@@ -12,14 +12,12 @@ int main(int argc, char **argv ){
 	ValueArg<int> widthArg("x", "width", "Width of the window", false, 1280, "int");
 	ValueArg<int> heightArg("y", "height", "Height of the window", false, 720, "int");
 	ValueArg<std::string> ndiPrefixArg("n", "ndiPrefix", "NDI prefix", false, "WWM-Projector-", "string");
-	ValueArg<float> fadeDurationArg("f", "fadeDuration", "Fade duration", false, 5.0, "float");
 
 	cmd.add(portArg);
 	cmd.add(projectorCountArg);
 	cmd.add(widthArg);
 	cmd.add(heightArg);
 	cmd.add(ndiPrefixArg);
-	cmd.add(fadeDurationArg);
 	cmd.parse(argc, argv);
 
 
@@ -33,7 +31,6 @@ int main(int argc, char **argv ){
 		projectorCountArg.getValue(),
 		widthArg.getValue(),
 		heightArg.getValue(),
-		ndiPrefixArg.getValue(),
-		fadeDurationArg.getValue()));
+		ndiPrefixArg.getValue()));
 
 }

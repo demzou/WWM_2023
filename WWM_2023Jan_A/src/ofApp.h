@@ -14,7 +14,7 @@ class ofApp : public ofBaseApp {
 
 public:
     // Custom constructor to pass in command line arguments
-    ofApp(int port, int projectorCount, int width, int height, string ndiPrefix, float fadeDuration);
+    ofApp(int port, int projectorCount, int width, int height, string ndiPrefix);
     void setup();
     void update();
     void draw();
