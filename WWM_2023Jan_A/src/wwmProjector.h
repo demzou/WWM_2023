@@ -6,13 +6,15 @@ class wwmProjector
 {
 
 public:
-	wwmProjector(int windowWidth, int windowHeight);
+	wwmProjector(int windowWidth, int windowHeight, float fadeDuration);
 	ofFbo draw();
 
     float dist;
     int maxRad;
     int radAmt;
     bool invite;
+    bool fade;
+    float fadeDuration;
 
 
 private:
@@ -20,11 +22,13 @@ private:
     vector<float> noiseSeeds;
     float angleStep, stepSize, maxStepSize, radius;
     int sunLocX, sunLocY, totalRays, maxTotalRays;
+    int maskLevel;
 
 
     void drawSpotlight();
     void drawLine();
-    void drawInvitation();  
+    void drawInvitation();
+    void drawMask();
    
 };
 

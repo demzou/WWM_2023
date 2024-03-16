@@ -14,7 +14,7 @@ class ofApp : public ofBaseApp {
 
 public:
     // Custom constructor to pass in command line arguments
-    ofApp(int port, int projectorCount, int width, int height, string ndiPrefix);
+    ofApp(int port, int projectorCount, int width, int height, string ndiPrefix, float fadeDuration);
     void setup();
     void update();
     void draw();
@@ -35,6 +35,7 @@ private:
     int projectorCount; // Number of projectors to create
     int windowWidth;
     int windowHeight;
+    float fadeDuration;
     string ndiPrefix;
     vector<ofxNDISender> senders;
     vector<ofxNDISendVideo> videoSenders;
